@@ -1,0 +1,82 @@
+:root {
+  --body-background-color: #ffe08c;
+  --font-color: #4e4e4e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--body-background-color);
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-container .main-wrap {
+  width: 768px;
+  background-color: white;
+  margin: 180px 0px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.image {
+  width: 230px;
+  height: 230px;
+  margin-top: -130px;
+}
+
+.information-section,
+.interested-section,
+.icon-section {
+  margin: 30px;
+  color: var(--font-color);
+}
+
+.title {
+  padding: 3px;
+  margin: 20px;
+  background: var(--body-background-color);
+  border-radius: 20px;
+}
+
+.content {
+  list-style: none;
+}
+
+.content li {
+  padding: 4px;
+}
+
+hr {
+  width: 662px;
+  margin: 0 auto;
+}
+
+.fa-github {
+  font-size: 30px;
+  color: black;
+}
+
+.fa-instagram {
+  font-size: 30px;
+  color: #d9418c;
+}
+
+.fa-facebook-messenger {
+  font-size: 30px;
+  color: #2478ff;
+}
+
+.icon-section a {
+  display: inline-block;
+  width: 30px;
+  margin: 0 15px;
+}
