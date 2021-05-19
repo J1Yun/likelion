@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <br>
+  <i class="far fa-arrow-alt-circle-left fa-2x" size="9x" style="cursor: pointer;" onclick="location.href='/blog'"></i>
+  <br><br>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th><h2>{{details.title}}</h2><p>{{details.pub_date}}</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if details.image %}
+      <tr>
+        <td><img src="{{details.image.url}}" alt=""></td>
+      </tr>
+      {% endif %}
+      <tr>
+        <td><p style="margin-top: 20px">{{details.body}}</p></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn btn-primary btn-sm" href="{% url 'edit' details.id%}" role="button">수정하기</a>
+    <a class="btn btn-secondary btn-sm" href="{% url 'delete' details.id%}" role="button">삭제하기</a>
+  </div>
+
+{% endblock %}

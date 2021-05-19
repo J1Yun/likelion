@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<title>자기소개</title>
+		<link rel="stylesheet" href="img/">
+        <script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+        <style>
+            :root {
+            --body-background-color: #ffe08c;
+            --font-color: #4e4e4e;
+            }
+
+            * {
+            margin: 0;
+            padding: 0;
+            }
+
+            body {
+            background: var(--body-background-color);
+            }
+
+            .main-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+
+            .main-container .main-wrap {
+            width: 768px;
+            background-color: white;
+            margin: 180px 0px;
+            text-align: center;
+            border-radius: 20px;
+            }
+
+            .image {
+            width: 230px;
+            height: 230px;
+            margin-top: -130px;
+            }
+
+            .information-section,
+            .interested-section,
+            .icon-section {
+            margin: 30px;
+            color: var(--font-color);
+            }
+
+            .title {
+            padding: 3px;
+            margin: 20px;
+            background: var(--body-background-color);
+            border-radius: 20px;
+            }
+
+            .content {
+            list-style: none;
+            }
+
+            .content li {
+            padding: 4px;
+            }
+
+            hr {
+            width: 662px;
+            margin: 0 auto;
+            }
+
+            .fa-github {
+            font-size: 30px;
+            color: black;
+            }
+
+            .fa-instagram {
+            font-size: 30px;
+            color: #d9418c;
+            }
+
+            .fa-facebook-messenger {
+            font-size: 30px;
+            color: #2478ff;
+            }
+
+            .icon-section a {
+            display: inline-block;
+            width: 30px;
+            margin: 0 15px;
+            }
+
+        </style>
+    </head>
+    <body>
+        {% load static %}
+        <div class="main-container">
+            <div class="main-wrap">
+                <img src="{% static 'img/최지윤 개발.png' %}" class="image">
+                <section class="information-section">
+                    <h3 class="title">내 정보</h3>
+                    <ul class="content">
+                        <li>최지윤 (Choi Ji Yun)</li>
+                        <li>단국대학교 소프트웨어학과 19학번</li>
+                        <li>멋쟁이 사자처럼 9기</li>
+                        <li>2000년 4월 6일생</li>
+                    </ul>
+                </section>
+                <hr>
+                <section class="interested-section">
+                    <h3 class="title">관심 기술 분야</h3>
+                    <ul class="content">
+                        <li>웹 프론트 - react, HTML/CSS/JavaScript 등</li>
+                        <li>웹 백엔드 - nodeJS, DJango 등</li>
+                        <li>데이터베이스 - MYSQL 등</li>
+                    </ul>
+                </section>
+                <hr>
+                <footer class="icon-section">
+                    <a href="https://github.com/J1Yun" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/wldbs8_8/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/messenger/" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

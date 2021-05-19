@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <style>
+    .card:hover{
+      transform: scale(1.01);
+      box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    }
+    .card{
+      margin: 20px 0;
+    }
+    .header{
+      text-align: center;
+      margin: 30px 0;
+      font-weight: bold; 
+    }
+
+  </style>
+  <div class="main-wrap" >
+  <h2 class="header"> == Blog List == </h2>
+  {% for blog in blogs.all %}
+    <div class="card">
+      <div class="card-body" style="cursor: pointer" onclick="location.href='/blog/{{blog.id}}'">
+        <h5 class="card-title">{{blog.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
+        <p class="card-text">{{blog.summary}}</p>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}
