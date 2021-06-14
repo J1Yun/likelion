@@ -21,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6592nfql@fq2wy0l!jef@xgwq!8fxjwuc1lseaxrd1kw=4029y'
+SECRET_KEY = os.environ.get('SECRET_KEY', 's96*(hdydiok_2y&f%-#ve2xxv#4gh*etjqtski*h-=o#(gqtu')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG', 'True') != 'False')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -135,3 +136,13 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+#AWS
+# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+# AWS_S3_SIGNATURE_VERSION = 's3v4'
+# AWS_S3_REGION_NAME = 'ap-northeast-2'
+# AWS_STORAGE_BUCKET_NAME = 'likelion-lesson'
+# AWS_S3_CUSTOM_DOMAIN = 'd37gx43o3lnt1n.cloudfront.net'
