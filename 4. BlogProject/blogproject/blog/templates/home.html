@@ -1,18 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<style>
+  .header {
+    text-align: center;
+    margin: 30px 0;
+    font-weight: bold;
+  }
+</style>
 
-{% block content %}
-  <style>
-    .header{
-      text-align: center;
-      margin: 30px 0;
-      font-weight: bold;
-    }
-  </style>
-
-  <h1 class="header">Simple Blog Project</h1>
-  <div class="d-grid gap-3 col-6 mx-auto">
+<h1 class="header">Simple Blog Project</h1>
+<div class="d-grid gap-3 col-6 mx-auto">
   <a class="btn btn-outline-primary btn-lg" href="{%url 'blogList'%}" role="button">블로그 목록 바로가기</a>
   <a class="btn btn-outline-primary btn-lg" href="{%url 'new'%}" role="button">블로그 글쓰기</a>
   <a class="btn btn-outline-primary btn-lg" href="{%url 'introduce'%}" role="button">내 프로필 보기</a>
-  </div>
+</div>
 {% endblock %}

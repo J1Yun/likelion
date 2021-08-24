@@ -24,21 +24,23 @@ def new(request):
     return render(request, 'new.html', {'form' : form})
 
 def create(request):
-    form = BlogForm(request.POST, request.FILES)
-    if form.is_valid():
-        new_blog = form.save(commit=False)
-        new_blog.pub_date = timezone.now()
-        new_blog.save()
-        return redirect('detail' , new_blog.id)
-    return redirect('home')
-    # blog = Blog()
-    # blog.title = request.POST['title']
-    # blog.writer = request.POST['writer']
-    # blog.body = request.POST['body']
-    # blog.pub_date = timezone.now()
-    # blog.image = request.FILES['image']
-    # blog.save()
-    # return redirect('detail' , blog.id)
+    # form = BlogForm(request.POST, request.FILES)
+    # if form.is_valid():
+    #     new_blog = form.save(commit=False)
+    #     new_blog.pub_date = timezone.now()
+    #     new_blog.save()
+    #     return redirect('detail' , new_blog.id)
+    # return redirect('home')
+    blog = Blog()
+    blog.title = request.POST['title']
+    blog.writer = request.POST['writer']
+    blog.body = request.POST['body']
+    blog.pub_date = timezone.now()
+    blog.image = request.FILES['image']
+    print()
+    print(blog.image)
+    blog.save()
+    return redirect('detail' , blog.id)
     
 
 def edit(request, id):
@@ -51,6 +53,7 @@ def update(request, id):
     update_blog.writer = request.POST['writer']
     update_blog.body = request.POST['body']
     update_blog.pub_date = timezone.now()
+    update_blog.image = request.FILES['image']
     update_blog.save()
     return redirect('detail' , update_blog.id)
 
